@@ -1,4 +1,23 @@
 "=========================================================================================================
+" Vundle
+"=========================================================================================================
+set nocompatible    " be iMproved
+filetype off        " required!
+
+let $DOTVIM_DIR=vimfiles    ".vim
+set rtp+=$VIM/$DOTVIM_DIR/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" vim-scripts repos
+"Bundle 'vim-plugin-foo'
+"Bundle 'vim-plugin-bar'
+
+filetype plugin indent on    " required!
+"=========================================================================================================
 " auto cmd
 "=========================================================================================================
 "autocmd InsertLeave * se nocul
