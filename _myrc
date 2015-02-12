@@ -4,7 +4,7 @@
 set nocompatible    " be iMproved
 filetype off        " required!
 
-let $DOTVIM_DIR=vimfiles    ".vim
+let $DOTVIM_DIR='vimfiles'      ".vim dir
 set rtp+=$VIM/$DOTVIM_DIR/bundle/vundle/
 call vundle#rc()
 
