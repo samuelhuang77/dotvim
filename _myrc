@@ -1,0 +1,141 @@
+"=========================================================================================================
+" auto cmd
+"=========================================================================================================
+"autocmd InsertLeave * se nocul
+"autocmd InsertEnter * se cul
+"=========================================================================================================
+" collected functions
+"=========================================================================================================
+"=========================================================================================================
+" my setting
+"=========================================================================================================
+"viminfo setting
+set viminfo='50,<1000,s100,:0,n$VIM\\viminfo
+
+" edit property
+set hidden
+
+" line presents
+set nowrap
+
+" case sensitve
+set ic
+
+" tab space misc
+set ts=4
+set sts=4
+set sw=4
+set expandtab
+
+" tags file search path
+set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../../../../../tags,./../../../../../../tags,./../../../../../../../tags
+
+" folder method
+"set fdm=manual
+"nmap <silent> <leader><leader> [{V%zf
+
+" syntax color & hightlight color
+syntax on
+set hls
+
+" grepprg
+"set grepprg=grep\ -n\ --exclude=*~
+set grepprg=grep\ -n\ --exclude-from=c:\\progra~2\\vim\\_exclude.pattern
+
+" backup directory
+set backupdir=d:\\tmp\\vim_editfile_writebackup
+
+" fixed for diff files
+let $TMP="d:\\tmp"
+set diffexpr=
+
+" diff option
+set diffopt=iwhite
+
+" file format setup
+" set ffs=unix,dos ff=unix
+set ffs=dos ff=dos
+
+" file encoding
+set fileencodings=utf8,big5,gb2312
+"=========================================================================================================
+" my macros
+"=========================================================================================================
+" remove win32 macro
+unmap <C-A>
+unmap <C-Y>
+
+" for new-vimgrep
+" map <C-F12> viwy::vimgrep /\<<C-R>"\>\c/ cpp/**/*.[cC] hpp/**/*.[hH] role/**/*.[cC] role1/**/*.[cC] roro/**/*.[cC] chief/**/*.[cC] animal/**/*.[cC] cluster/**/*.[cC] reader/**/*.[cC] stage/**/*.[cC]<ENTER>
+map <C-N>       :cn<ENTER>
+map <C-P>       :cp<ENTER>
+
+" map
+map <F2>        :retab<Enter>:update<Enter>
+map <S-F2>      :retab<Enter>:%s/\s\+$//g<Enter>:set nohls<Enter>'':update<Enter>
+map <F3>        <ESC>
+map <F4>        :hide<Enter>
+map <S-F4>      :bd<Enter>
+map <F5>        :vertical res 200<Enter>:res 200<Enter>
+map <F6>        <C-W>=
+map <F7>        :N<Enter>
+map <F8>        :n<Enter>
+map <F9>        :tp<Enter>
+map <F10>       :tn<Enter>
+map <F11>       <ESC>
+map <F12>       <C-W>w
+map <S-F12>     <C-W>W
+map <C-F1>      :set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" ｴ弴ﾕ
+map <C-F2>      :set enc=cp932<Enter>:lan C<Enter>" テスト
+
+
+imap <F2>       <ESC>:retab<Enter>:update<Enter>a
+imap <S-F2>     <ESC>:retab<Enter>:%s/\s\+$//g<Enter>:set nohls<Enter>'':update<Enter>a
+imap <F3>       <ESC>
+imap <F4>       <ESC>:hide<Enter>a
+imap <S-F4>     <ESC>:bd<Enter>a
+imap <F5>       <ESC>:vertical res 200<Enter>:res 200<Enter>a
+imap <F6>       <ESC><C-W>=a
+imap <F7>       <ESC>:N<Enter>a
+imap <F8>       <ESC>:n<Enter>a
+imap <F9>       <ESC>:tp<Enter>a
+imap <F10>      <ESC>:tn<Enter>a
+imap <F11>      <ESC>
+imap <F12>      <ESC><C-W>w
+imap <S-F12>    <ESC><C-W>W
+imap <C-F1>     <ESC>:set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" ｴ弴ﾕ
+imap <C-F2>     <ESC>:set enc=cp932<Enter>:lan C<Enter>" テスト
+
+" winmanagers
+"map <c-w><c-f> :FirstExplorerWindow<cr>
+"map <c-w><c-b> :BottomExplorerWindow<cr>
+"map <c-w><c-t> :WMToggle<cr>
+
+" args macro
+map <C-F11>     :999argedit %<Enter>
+map <C-F12>     :argdel %<Enter>
+
+"=========================================================================================================
+" plugins
+"=========================================================================================================
+" Tlist ctags cmd assign
+"let Tlist_Ctags_Cmd=$VIM."/ctags58/ctags.exe"
+let Tlist_Ctags_Cmd='c:\progra~2\vim\ctags58\ctags.exe'
+
+" cscope
+"set csprg=d:/toolbin/cscope.exe
+
+" VIM 7.0
+"let loaded_matchparen=1
+
+"=========================================================================================================
+" autoexec
+"=========================================================================================================
+" automatic set syntax for *.asm
+au BufRead *.asm :set syn=asm68k " 68000 assembly
+
+" When switching buffers, preserve window view.
+"if v:version >= 700
+"  au BufLeave * let b:winview = winsaveview()
+"  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+"endif
