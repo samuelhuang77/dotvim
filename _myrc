@@ -13,8 +13,22 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " vim-scripts repos
-"Bundle 'vim-plugin-foo'
-"Bundle 'vim-plugin-bar'
+Bundle 'bufexplorer.zip'
+"----- Buffer Explorer / Browser 
+Bundle 'fencview.vim'
+"----- Autodetect multiple encodings
+Bundle 'The-NERD-tree'
+"----- A tree explorer plugin for navigating the filesystem
+"*Bundle 'NERD_Tree-and-ack'
+"----- Adding search capability to NERD_Tree with ack
+"*Bundle 'nerdtree-ack'
+"----- NERDtree + ack.vim
+Bundle 'taglist.vim'
+"----- Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
+"*Bundle 'torte.vim'
+"----- Grey on black, slighter contrasts (for TFT)
+"Bundle 'tortex'
+"----- clear & soft => modified from Thorsten Maerz's torte. support GUI & Term
 
 filetype plugin indent on    " required!
 "=========================================================================================================
