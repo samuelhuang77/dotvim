@@ -29,6 +29,8 @@ Bundle 'taglist.vim'
 "----- Grey on black, slighter contrasts (for TFT)
 "Bundle 'tortex'
 "----- clear & soft => modified from Thorsten Maerz's torte. support GUI & Term
+Bundle 'ProjectCTags'
+"----- Generates CTAGS for versioned projects without the need to maintain project file
 
 filetype plugin indent on    " required!
 "=========================================================================================================
@@ -73,7 +75,8 @@ set hls
 
 " grepprg
 "set grepprg=grep\ -n\ --exclude=*~
-set grepprg=grep\ -n\ --exclude-from=c:\\progra~2\\vim\\_exclude.pattern
+"set grepprg=grep\ -n\ --exclude-from=c:\\progra~2\\vim\\vimfiles\_exclude.pattern
+let &grepprg='grep -n --exclude-from='.fnamemodify($VIM,':8').'\vimfiles\_exclude.pattern'
 
 " backup directory
 set backupdir=d:\\tmp\\vim_editfile_writebackup
@@ -151,9 +154,14 @@ map <C-F12>     :argdel %<Enter>
 "=========================================================================================================
 " plugins
 "=========================================================================================================
-" Tlist ctags cmd assign
-"let Tlist_Ctags_Cmd=$VIM."/ctags58/ctags.exe"
-let Tlist_Ctags_Cmd='c:\progra~2\vim\ctags58\ctags.exe'
+" assign ctags path ( windows path maybe need to use 8.3-filename )
+let ctags_path = fnamemodify($VIM,':8').'\ctags58\ctags.exe'
+
+" projectCTags.vim : assign ctags program
+let g:projectCTagsCTagsExe = ctags_path
+
+" taglist.vim : Tlist ctags cmd assign
+let Tlist_Ctags_Cmd = ctags_path
 
 " cscope
 "set csprg=d:/toolbin/cscope.exe
