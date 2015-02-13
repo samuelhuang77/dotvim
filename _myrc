@@ -31,6 +31,8 @@ Bundle 'taglist.vim'
 "----- clear & soft => modified from Thorsten Maerz's torte. support GUI & Term
 Bundle 'ProjectCTags'
 "----- Generates CTAGS for versioned projects without the need to maintain project file
+Bundle 'YankRing.vim'
+"----- Maintains a history of previous yanks, changes and deletes
 
 filetype plugin indent on    " required!
 "=========================================================================================================
