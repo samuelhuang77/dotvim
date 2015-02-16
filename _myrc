@@ -30,6 +30,8 @@ Bundle 'YankRing.vim'
 "----- buffer/file/command/tag/etc explorer with fuzzy matching
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+"----- easyly move cursor in vim
+Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on    " required!
 "=========================================================================================================
@@ -157,6 +159,9 @@ map fba <esc>:FufBookmarkFileAdd<cr>
 map fbl <esc>:FufBookmarkFile<cr>
 map fu <esc>:FufBuffer<cr>
 map ft <esc>:FufTag<cr>
+
+" easymotion
+"nmap s <Plug>(easymotion-s)
 
 "=========================================================================================================
 " plugins
