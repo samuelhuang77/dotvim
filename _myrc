@@ -24,7 +24,7 @@ Bundle 'The-NERD-tree'
 "----- Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 Bundle 'taglist.vim'
 "----- Generates CTAGS for versioned projects without the need to maintain project file
-Bundle 'ProjectCTags'
+"Bundle 'ProjectCTags'
 "----- Maintains a history of previous yanks, changes and deletes
 Bundle 'YankRing.vim'
 "----- buffer/file/command/tag/etc explorer with fuzzy matching
@@ -170,7 +170,7 @@ map ft <esc>:FufTag<cr>
 let ctags_path = fnamemodify($VIM,':8').'\ctags58\ctags.exe'
 
 " projectCTags.vim : assign ctags program
-let g:projectCTagsCTagsExe = ctags_path
+"let g:projectCTagsCTagsExe = ctags_path
 
 " taglist.vim : Tlist ctags cmd assign
 let Tlist_Ctags_Cmd = ctags_path
