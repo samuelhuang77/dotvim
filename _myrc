@@ -104,13 +104,16 @@ unmap <C-Y>
 
 " for new-vimgrep
 " map <C-F12> viwy::vimgrep /\<<C-R>"\>\c/ cpp/**/*.[cC] hpp/**/*.[hH] role/**/*.[cC] role1/**/*.[cC] roro/**/*.[cC] chief/**/*.[cC] animal/**/*.[cC] cluster/**/*.[cC] reader/**/*.[cC] stage/**/*.[cC]<ENTER>
-map <C-N>       :cn<ENTER>
-map <C-P>       :cp<ENTER>
+"map <C-N>       :cn<ENTER>
+"map <C-P>       :cp<ENTER>
+" é¿å…èˆ‡ YankRing Plugin é‡è¦† mapping key
+map <F3>        :cn<ENTER>
+map <S-F3>      :cp<ENTER>
 
 " map
 map <F2>        :retab<Enter>:update<Enter>
 map <S-F2>      :retab<Enter>:%s/\s\+$//g<Enter>:set nohls<Enter>'':update<Enter>
-map <F3>        <ESC>
+"map <F3>        <ESC>
 map <F4>        :hide<Enter>
 map <S-F4>      :bd<Enter>
 map <F5>        :vertical res 200<Enter>:res 200<Enter>
@@ -122,8 +125,8 @@ map <F10>       :tn<Enter>
 map <F11>       <ESC>
 map <F12>       <C-W>w
 map <S-F12>     <C-W>W
-map <C-F1>      :set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" ´ú¸Õ
-map <C-F2>      :set enc=cp932<Enter>:lan C<Enter>" ƒeƒXƒg
+map <C-F1>      :set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" æ¸¬è©¦
+map <C-F2>      :set enc=cp932<Enter>:lan C<Enter>" ï€—ï€Šï€™
 
 
 imap <F2>       <ESC>:retab<Enter>:update<Enter>a
@@ -140,8 +143,8 @@ imap <F10>      <ESC>:tn<Enter>a
 imap <F11>      <ESC>
 imap <F12>      <ESC><C-W>w
 imap <S-F12>    <ESC><C-W>W
-imap <C-F1>     <ESC>:set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" ´ú¸Õ
-imap <C-F2>     <ESC>:set enc=cp932<Enter>:lan C<Enter>" ƒeƒXƒg
+imap <C-F1>     <ESC>:set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" æ¸¬è©¦
+imap <C-F2>     <ESC>:set enc=cp932<Enter>:lan C<Enter>" ï€—ï€Šï€™
 
 " winmanagers
 "map <c-w><c-f> :FirstExplorerWindow<cr>
