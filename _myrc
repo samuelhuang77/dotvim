@@ -34,6 +34,9 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on    " required!
+
+" YankRing.vim setting
+let g:yankring_warn_on_truncate = 0
 "=========================================================================================================
 " auto cmd
 "=========================================================================================================
