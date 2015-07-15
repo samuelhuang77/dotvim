@@ -1,38 +1,43 @@
 "=========================================================================================================
 " Vundle
 "=========================================================================================================
+let $DOTVIM_DIR = 'vimfiles'                        " .vim dir
+let $BUNDLE_DIR = $VIM.'/'.$DOTVIM_DIR.'/bundle'    " bundle dir
+
 set nocompatible    " be iMproved
 filetype off        " required!
 
-let $DOTVIM_DIR='vimfiles'      ".vim dir
 set rtp+=$VIM/$DOTVIM_DIR/bundle/vundle/
-call vundle#rc()
+call vundle#begin($BUNDLE_DIR)
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " vim-scripts repos
 "----- clear & soft => modified from Thorsten Maerz's torte. support GUI & Term
-"Bundle 'tortex'
+"Plugin 'tortex'
 "----- Buffer Explorer / Browser 
-Bundle 'bufexplorer.zip'
+Plugin 'bufexplorer.zip'
 "----- Autodetect multiple encodings
-Bundle 'https://github.com/mbbill/fencview.git'
+Plugin 'https://github.com/mbbill/fencview.git'
 "----- A tree explorer plugin for navigating the filesystem
-Bundle 'The-NERD-tree'
+Plugin 'The-NERD-tree'
 "----- Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
-Bundle 'taglist.vim'
+Plugin 'taglist.vim'
 "----- Generates CTAGS for versioned projects without the need to maintain project file
-"Bundle 'ProjectCTags'
+"Plugin 'ProjectCTags'
 "----- Maintains a history of previous yanks, changes and deletes
-Bundle 'YankRing.vim'
+"Plugin 'YankRing.vim'
 "----- buffer/file/command/tag/etc explorer with fuzzy matching
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 "----- easyly move cursor in vim
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
+"---- selecting indent text
+Plugin 'vim-indent-object'
 
+call vundle#end()            " required
 filetype plugin indent on    " required!
 "=========================================================================================================
 " auto cmd
@@ -195,3 +200,6 @@ au BufRead *.asm :set syn=asm68k " 68000 assembly
 "  au BufLeave * let b:winview = winsaveview()
 "  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "endif
+
+"=========================================================================================================
+" vim: set syntax=vim norl:
