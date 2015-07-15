@@ -41,8 +41,8 @@ call vundle#end()            " required
 filetype plugin indent on    " required!
 
 " YankRing.vim setting
-let g:yankring_warn_on_truncate = 0
-let g:yankring_max_element_length = 4194304
+"let g:yankring_warn_on_truncate = 0
+"let g:yankring_max_element_length = 4194304
 "=========================================================================================================
 " auto cmd
 "=========================================================================================================
