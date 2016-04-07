@@ -45,7 +45,7 @@ filetype plugin indent on    " required!
 "let g:yankring_max_element_length = 4194304
 
 " fencview setting
-let g:fencview_autodetect = 1
+let g:fencview_autodetect = 0
 "=========================================================================================================
 " auto cmd
 "=========================================================================================================
@@ -106,7 +106,17 @@ set diffopt=iwhite
 set ffs=dos ff=dos
 
 " file encoding
-set fileencodings=utf8,big5,gb2312
+set encoding=utf8
+set fileencoding=cp950
+set fileencodings=ucs-bom,utf8,cp950,gb2312,cp932,latin1
+
+" menu language
+set langmenu=zh_TW.utf-8
+"set langmenu=C
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+language messages zh_TW.utf-8
+"language C
 "=========================================================================================================
 " my macros
 "=========================================================================================================
@@ -115,65 +125,65 @@ unmap <C-A>
 unmap <C-Y>
 
 " for new-vimgrep
-" map <C-F12> viwy::vimgrep /\<<C-R>"\>\c/ cpp/**/*.[cC] hpp/**/*.[hH] role/**/*.[cC] role1/**/*.[cC] roro/**/*.[cC] chief/**/*.[cC] animal/**/*.[cC] cluster/**/*.[cC] reader/**/*.[cC] stage/**/*.[cC]<ENTER>
-"map <C-N>       :cn<ENTER>
-"map <C-P>       :cp<ENTER>
-" ÈÅøÂÖçËàá YankRing Plugin ÈáçË¶Ü mapping key
-map <F3>        :cn<ENTER>
-map <S-F3>      :cp<ENTER>
+" map <C-F12> viwy::vimgrep /\<<C-R>"\>\c/ cpp/**/*.[cC] hpp/**/*.[hH] role/**/*.[cC] role1/**/*.[cC] roro/**/*.[cC] chief/**/*.[cC] animal/**/*.[cC] cluster/**/*.[cC] reader/**/*.[cC] stage/**/*.[cC]<CR>
+"map <C-N>       :cn<CR>
+"map <C-P>       :cp<CR>
+" ¡◊ßKªP YankRing Plugin ≠´¬– mapping key
+map <F3>        :cn<CR>
+map <S-F3>      :cp<CR>
 
 " map
-map <F2>        :retab<Enter>:update<Enter>
-map <S-F2>      :retab<Enter>:%s/\s\+$//g<Enter>:set nohls<Enter>'':update<Enter>
+map <F2>        :retab<CR>:update<CR>
+map <S-F2>      :retab<CR>:%s/\s\+$//g<CR>:set nohls<CR>'':update<CR>
 "map <F3>        <ESC>
-map <F4>        :hide<Enter>
-map <S-F4>      :bd<Enter>
-map <F5>        :vertical res 200<Enter>:res 200<Enter>
+map <F4>        :hide<CR>
+map <S-F4>      :bd<CR>
+map <F5>        :vertical res 200<CR>:res 200<CR>
 map <F6>        <C-W>=
-map <F7>        :N<Enter>
-map <F8>        :n<Enter>
-map <F9>        :tp<Enter>
-map <F10>       :tn<Enter>
-map <F11>       <ESC>
+map <F7>        :N<CR>
+map <F8>        :n<CR>
+map <F9>        :tp<CR>
+map <F10>       :tn<CR>
+map <F11>       <ESC>:FencView<CR>
 map <F12>       <C-W>w
 map <S-F12>     <C-W>W
-map <C-F1>      :set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" Ê∏¨Ë©¶
-map <C-F2>      :set enc=cp932<Enter>:lan C<Enter>" ÔÄóÔÄäÔÄô
+map <C-F1>      :set enc=cp950<CR>:lan Chinese_Taiwan.950<CR>" ¥˙∏’
+map <C-F2>      :set enc=cp932<CR>:lan C<CR>" ÉeÉXÉg
 
 
-imap <F2>       <ESC>:retab<Enter>:update<Enter>a
-imap <S-F2>     <ESC>:retab<Enter>:%s/\s\+$//g<Enter>:set nohls<Enter>'':update<Enter>a
+imap <F2>       <ESC>:retab<CR>:update<CR>a
+imap <S-F2>     <ESC>:retab<CR>:%s/\s\+$//g<CR>:set nohls<CR>'':update<CR>a
 imap <F3>       <ESC>
-imap <F4>       <ESC>:hide<Enter>a
-imap <S-F4>     <ESC>:bd<Enter>a
-imap <F5>       <ESC>:vertical res 200<Enter>:res 200<Enter>a
+imap <F4>       <ESC>:hide<CR>a
+imap <S-F4>     <ESC>:bd<CR>a
+imap <F5>       <ESC>:vertical res 200<CR>:res 200<CR>a
 imap <F6>       <ESC><C-W>=a
-imap <F7>       <ESC>:N<Enter>a
-imap <F8>       <ESC>:n<Enter>a
-imap <F9>       <ESC>:tp<Enter>a
-imap <F10>      <ESC>:tn<Enter>a
-imap <F11>      <ESC>
+imap <F7>       <ESC>:N<CR>a
+imap <F8>       <ESC>:n<CR>a
+imap <F9>       <ESC>:tp<CR>a
+imap <F10>      <ESC>:tn<CR>a
+imap <F11>      <ESC>:FencView<CR>
 imap <F12>      <ESC><C-W>w
 imap <S-F12>    <ESC><C-W>W
-imap <C-F1>     <ESC>:set enc=cp950<Enter>:lan Chinese_Taiwan.950<Enter>" Ê∏¨Ë©¶
-imap <C-F2>     <ESC>:set enc=cp932<Enter>:lan C<Enter>" ÔÄóÔÄäÔÄô
+imap <C-F1>     <ESC>:set enc=cp950<CR>:lan Chinese_Taiwan.950<CR>" ¥˙∏’
+imap <C-F2>     <ESC>:set enc=cp932<CR>:lan C<CR>" ÉeÉXÉg
 
 " winmanagers
-"map <c-w><c-f> :FirstExplorerWindow<cr>
-"map <c-w><c-b> :BottomExplorerWindow<cr>
-"map <c-w><c-t> :WMToggle<cr>
+"map <c-w><c-f> :FirstExplorerWindow<CR>
+"map <c-w><c-b> :BottomExplorerWindow<CR>
+"map <c-w><c-t> :WMToggle<CR>
 
 " args macro
-map <C-F11>     :999argedit %<Enter>
-map <C-F12>     :argdel %<Enter>
+map <C-F11>     :999argedit %<CR>
+map <C-F12>     :argdel %<CR>
 
 " FuzzyFinder plugin mapping
-map ff <esc>:FufFile<cr>
-map fcd <esc>:FufDir<cr>
-map fba <esc>:FufBookmarkFileAdd<cr>
-map fbl <esc>:FufBookmarkFile<cr>
-map fu <esc>:FufBuffer<cr>
-map ft <esc>:FufTag<cr>
+map ff <esc>:FufFile<CR>
+map fcd <esc>:FufDir<CR>
+map fba <esc>:FufBookmarkFileAdd<CR>
+map fbl <esc>:FufBookmarkFile<CR>
+map fu <esc>:FufBuffer<CR>
+map ft <esc>:FufTag<CR>
 
 " easymotion
 "nmap s <Plug>(easymotion-s)
