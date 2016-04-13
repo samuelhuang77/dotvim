@@ -34,8 +34,16 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 "----- easyly move cursor in vim
 Plugin 'Lokaltog/vim-easymotion'
-"---- selecting indent text
+"----- selecting indent text
 Plugin 'vim-indent-object'
+"----- YouCompleteMe
+"Plugin 'Valloric/YouCompleteMe'
+"----- PowerLine
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"----- airline ( use PowerLine )
+Plugin 'vim-airline/vim-airline'
+"----- airline-csv
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required!
@@ -46,6 +54,17 @@ filetype plugin indent on    " required!
 
 " fencview setting
 let g:fencview_autodetect = 0
+
+" YouCompleteMe setting
+"let g:ycm_python_binary_path = 'c:\python27'
+
+" airline
+set laststatus=2
+
+" airline-csv
+let g:airline#extensions#csv#enabled = 1
+let g:airline#extensions#csv#column_display = 'Name'
+
 "=========================================================================================================
 " auto cmd
 "=========================================================================================================
@@ -83,6 +102,7 @@ set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./../.
 "nmap <silent> <leader><leader> [{V%zf
 
 " syntax color & hightlight color
+colorscheme torte
 syntax on
 set hls
 
@@ -107,6 +127,7 @@ set ffs=dos ff=dos
 
 " file encoding
 set encoding=utf8
+set termencoding=cp950
 set fileencoding=cp950
 set fileencodings=ucs-bom,utf8,cp950,gb2312,cp932,latin1
 
