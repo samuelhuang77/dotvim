@@ -20,9 +20,10 @@ Plugin 'gmarik/vundle'
 "----- Buffer Explorer / Browser 
 Plugin 'bufexplorer.zip'
 "----- Autodetect multiple encodings
-Plugin 'https://github.com/mbbill/fencview.git'
+Plugin 'mbbill/fencview.git'
 "----- A tree explorer plugin for navigating the filesystem
-Plugin 'The-NERD-tree'
+"""Plugin 'The-NERD-tree'
+Plugin 'scrooloose/nerdtree'
 "----- Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
 Plugin 'taglist.vim'
 "----- Generates CTAGS for versioned projects without the need to maintain project file
@@ -231,7 +232,7 @@ let Tlist_Ctags_Cmd = ctags_path
 " autoexec
 "=========================================================================================================
 " automatic set syntax for *.asm
-au BufRead *.asm :set syn=asm68k " 68000 assembly
+"au BufRead *.asm :set syn=asm68k " 68000 assembly
 
 " When switching buffers, preserve window view.
 "if v:version >= 700
