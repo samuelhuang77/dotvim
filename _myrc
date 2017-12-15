@@ -45,6 +45,8 @@ Plugin 'vim-indent-object'
 Plugin 'vim-airline/vim-airline'
 "----- airline-csv
 Plugin 'chrisbra/csv.vim'
+"----- jinja syntax and indent
+Plugin 'lepture/vim-jinja'
 
 call vundle#end()            " required
 filetype plugin indent on    " required!
@@ -240,5 +242,6 @@ let Tlist_Ctags_Cmd = ctags_path
 "  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
 "endif
 
+au BufNewFile,BufRead *.tpl,*.html,*.htm,*.shtml,*.stm set ft=jinja
 "=========================================================================================================
 " vim: set syntax=vim norl:
