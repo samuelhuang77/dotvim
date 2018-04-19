@@ -47,6 +47,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'chrisbra/csv.vim'
 "----- jinja syntax and indent
 Plugin 'lepture/vim-jinja'
+"----- git plugin
+Plugin 'tpope/vim-fugitive'
+"----- AnsiEsc
+Plugin 'powerman/vim-plugin-AnsiEsc'
 
 call vundle#end()            " required
 filetype plugin indent on    " required!
